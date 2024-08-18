@@ -1,0 +1,42 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>연습2</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div class="box box1">
+        <span>영역1</span><br>
+        <span class ="white">흰색</span>
+    </div>
+    <div class="box box2">
+        <span>영역2</span><br>
+        <span class ="blue" id="area">검정색</span>
+    </div>
+
+    <script>
+        // 스프레드 문법을 사용하여 모든 span 요소를 선택하고 처리
+        const $span = document.getElementsByTagName('span');
+        [...$span].forEach(span => span.style.color = 'black');
+        const $white = document.getElementsByClassName('white');
+        [...$white].forEach(white => white.style.color = 'white');
+        const $blue = document.getElementsByClassName('blue');
+        [...$blue].forEach(blue => blue.style.color = 'blue');
+        const $class1 = document.getElementsByClassName('box1');
+        [...$class1].forEach(box1 => box1.style.backgroundColor = 'red');
+        const $class2 = document.getElementsByClassName('box2');
+        [...$class2].forEach(box2 => box2.style.backgroundColor = 'yellow');
+        // '검정색' 텍스트를 '검정색 싫어'로 변경
+        const $area =document.getElementById('area');
+        const $textNode = $area.firstChild
+        $textNode.nodeValue = '검정색 싫어'
+    </script>
+</body>
+</html>
